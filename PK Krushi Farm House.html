@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PK Krushi Farm House</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+      transition: all 0.4s ease-in-out;
+    }
+    header {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      animation: fadelnDown 1s ease;
+    }
+    header img {
+      width: 80px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+    nav {
+      background: #1b5e20;
+      padding: 10px;
+      text-align: center;
+      animation: fadeln 1.5s ease-in-out;
+ }
+    nav a {
+      display: inline-block;
+      color: white;
+      margin: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    nav a:hover{
+      color: #ffeb3b;
+      text-shadow: 0 0 10px #ffeb3b;
+      transform: scale(1.1);
+    }
+    .hero {
+      background: url('https://i.postimg.cc/4ynV9zqj/IMG-20250529-WA0015.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 80px 15px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+    .hero h2 {
+      font-size: 2em;
+      color: #ffeb3b;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .hero p {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #00e676;
+      text-shadow: 1px 1px 3px #000;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #ffcc00;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .cta-buttons a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    section {
+      padding: 30px 15px;
+      max-width: 100%;
+      margin: auto;
+      animation: fadeln 1s ease;
+    }
+    h3 {
+      color: #2e7d32;
+      font-size: 1.5em;
+      animation: slidelnLeft 1s ease;
+    }
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      padding: 20px;
+    }
+    .slider img, .video-thumb {
+      height: 160px;
+      border-radius: 10px;
+      scroll-snap-align: start;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .slider img:hover, .video-thumb:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .video-gallery , .insta-embed {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      flex-direction: column;
+      align-items: center;
+    }
+    insta-embed iframe {
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      animation: zoomIn 1s ease;}
+
+    .video-popup, .img-popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.5s ease;
+    }
+    .video-popup-content, .img-popup img {
+      width: 90%;
+      max-width: 720px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .video-popup-content video {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .img-popup img {
+      max-width: 90%;
+      max-height: 80%;
+    }
+    .close-btn, .img-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+      background: #333;
+      border-radius: 50%;
+      padding: 0 10px;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    form input, form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    form button {
+      padding: 10px;
+      background: #1b5e20;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    @media screen and (max-width: 600px) {
+      .hero h2 {
+        font-size: 1.5em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+      .slider img {
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://i.postimg.cc/0j3rgXz6/IMG-20250529-WA0003.jpg" alt="PK Krushi Logo">
+    <h1>PK Krushi Farm House</h1>
+    <p>किसान बिना अन्न नहीं • No Farmers, No Food</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Welcome to PK Krushi Farm</h2>
+    <p>हम दिल से किसान हैं, प्रकृति को प्यार से उगाते हैं।</p>
+    <div class="cta-buttons">
+      <a href="#gallery">Watch Reels</a>
+      <a href="#contact">Visit Us</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h3>About Us – हमारे बारे में</h3>
+    <p>हम गुजरात के डांटीवाड़ा से किसान हैं। 1965 से हम स्मार्ट और टिकाऊ खेती को बढ़ावा दे रहे हैं। हमारा मिशन: नई पीढ़ी को खेती की ओर लाना और आधुनिक तकनीक के साथ इसे आगे बढ़ाना।</p>
+  </section>
+
+  <section id="gallery">
+    <h3>Gallery – गैलरी</h3>
+
+    <div class="video-gallery">
+      <img src="https://i.postimg.cc/MKMYL6r3/video-thumb.jpg" class="video-thumb" onclick="openVideoPopup('videos/frameHOusereel.mp4')" alt="Video thumbnail">
+    </div>
+
+    <div class="slider">
+      <img src="https://i.postimg.cc/KY8YLYxK/IMG-20250529-WA0011.jpg" class="zoom-img" onclick="openImagePopup(this.src)" alt="Farm 2">
+      <img src="https://i.postimg.cc/5Nv6LmkD/IMG-20250529-WA0005.jpg" class="zoom-img" onclick="openImagePopup(this.src)" alt="Farm 3">
+      <img src="https://i.postimg.cc/B6KRvtm9/476761676-942819117918744-8050767068752509671-n-heic.jpg" class="zoom-img" onclick="openImagePopup(this.src)" alt="Farm 4">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Contact – संपर्क करें</h3>
+    <p>स्थान: p.k.farmhouse, डांटीवाड़ा, गुजरात 385510<br>
+    Instagram: <a href="https://www.instagram.com/p.k.krushi.farm/" target="_blank">@p.k.krushi.farm</a><br>
+    WhatsApp: +91-XXXXXXXXXX</p>
+    <div style="text-align: center; margin: 20px 0;">
+      <img src="https://i.postimg.cc/Z5hyShR2/IMG-20250529-WA0004.jpg" alt="QR Code" style="max-width: 200px; width: 100%; height: auto;">
+      <p>हमसे संपर्क के लिए QR कोड स्कैन करें</p>
+    </div>
+    <form>
+      <input type="text" placeholder="आपका नाम" required>
+      <input type="email" placeholder="आपका ईमेल" required>
+      <textarea placeholder="संदेश..." rows="4"></textarea>
+      <button type="submit">भेजें</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>"हमें हर दिन किसानों की ज़रूरत है – दरરોજ ખેડૂત જરૂરી છે"</p>
+  </footer>
+
+  <!-- Video Popup -->
+  <div id="videoPopup" class="video-popup">
+    <div class="video-popup-content">
+      <span class="close-btn" onclick="closeVideoPopup()">&times;</span>
+      <video id="popupVideo" controls autoplay muted loop></video>
+    </div>
+  </div>
+
+  <!-- Image Popup -->
+  <div id="imagePopup" class="img-popup">
+    <span class="img-close" onclick="closeImagePopup()">&times;</span>
+    <img id="popupImg" src="" alt="Zoomed image">
+  </div>
+
+  <script>
+    function openVideoPopup(src) {
+      const popup = document.getElementById('videoPopup');
+      const video = document.getElementById('popupVideo');
+      video.src = src;
+      popup.style.display = 'flex';
+    }
+
+    function closeVideoPopup() {
+      const popup = document.getElementById('videoPopup');
+      const video = document.getElementById('popupVideo');
+      video.pause();
+      video.src = "";
+      popup.style.display = 'none';
+    }
+
+    function openImagePopup(src) {
+      document.getElementById("popupImg").src = src;
+      document.getElementById("imagePopup").style.display = "flex";
+    }
+
+    function closeImagePopup() {
+      document.getElementById("imagePopup").style.display = "none";
+    }
+
+    ScrollReveal().reveal('.slider img, .video-thumb', {
+      origin: 'bottom',
+      distance: '40px',
+      duration: 1000,
+      easing: 'ease-in-out',
+      reset: true,
+      interval: 100
+    });
+  </script>
+
+</body>
+</html>
