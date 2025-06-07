@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PK Krushi Reels Gallery</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f0f0f0;
+      color: #333;
+    }
+    header {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+    .reel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .reel-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transform: perspective(800px) rotateX(0deg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .reel-card:hover {
+      transform: perspective(800px) rotateX(5deg) rotateY(5deg);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+    .reel-card video {
+      width: 100%;
+      display: block;
+    }
+    .reel-card .caption {
+      padding: 10px;
+      font-weight: 600;
+      text-align: center;
+    }
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    a.back {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      background: #ffcc00;
+      color: black;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    a.back:hover {
+      transform: scale(1.05);
+      background: #f0b800;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎬 PK Krushi Reels Gallery</h1>
+  </header>
+
+  <div style="text-align:center">
+    <a href="index.html" class="back">⬅ પાછા જાવ Home</a>
+  </div>
+
+  <div class="reel-grid">
+    <div class="reel-card">
+      <video src="video/frameHOusereel.mp4" autoplay loop muted playsinline></video>
+      <div class="caption">Frame House Reel</div>
+    </div>
+    <div class="reel-card">
+      <video src="video/reel2.mp4" autoplay loop muted playsinline></video>
+      <div class="caption">New Crop Growth</div>
+    </div>
+    <div class="reel-card">
+      <video src="video/reel3.mp4" autoplay loop muted playsinline></video>
+      <div class="caption">Farm Walkthrough</div>
+    </div>
+  </div>
+
+  <footer>
+    <p>📍 ડાંટીવાડા, ગુજરાત | PK Krushi Farm</p>
+  </footer>
+</body>
+</html>
