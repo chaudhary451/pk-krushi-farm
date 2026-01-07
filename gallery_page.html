@@ -1,162 +1,153 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PK Krushi Reels Gallery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PK Krushi Reels Gallery</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <style>
-    * { box-sizing: border-box; }
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
 
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #f0f0f0;
-      color: #333;
-    }
+body {
+  font-family:'Poppins',sans-serif;
+  background:#fff;
+  color:#333;
+}
 
-    /* HEADER */
-    header {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 18px;
-    }
+/* HEADER */
+header {
+  background:#2e7d32;
+  color:white;
+  padding:20px 15px;
+  text-align:center;
+}
+header h1 {
+  font-size:2rem;
+  font-weight:600;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
+/* NAV SPACER */
+.spacer {
+  height:12px;
+  background:#e5e5e5;
+}
 
-    /* BACK BUTTON */
-    .back {
-      display: inline-block;
-      margin: 20px auto;
-      padding: 10px 22px;
-      background: #ffcc00;
-      color: #222;
-      border-radius: 25px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+/* BACK BUTTON */
+.back {
+  display:block;
+  width:max-content;
+  margin:20px auto;
+  padding:12px 25px;
+  background:#ffcc00;
+  color:#222;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:25px;
+  transition:0.3s ease;
+}
+.back:hover {transform:scale(1.05);}
 
-    .back:hover {
-      transform: scale(1.05);
-    }
+/* GRID CONTAINER */
+.reel-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:24px;
+  padding:25px;
+  max-width:1200px;
+  margin:auto;
+}
 
-    /* GRID */
-    .reel-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+/* CARD */
+.reel-card {
+  border-radius:12px;
+  overflow:hidden;
+  background:#fafafa;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+  transition:0.3s ease;
+}
+.reel-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 12px 26px rgba(0,0,0,0.15);
+}
 
-    /* CARD */
-    .reel-card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      transition: 0.3s;
-    }
+/* VIDEO */
+.reel-card video {
+  width:100%;
+  display:block;
+  height:240px;
+  object-fit:cover;
+  background:#000;
+}
 
-    .reel-card:hover {
-      transform: translateY(-6px);
-    }
+/* CAPTION */
+.caption {
+  padding:14px 10px;
+  text-align:center;
+  font-size:1rem;
+  font-weight:600;
+  color:#2e7d32;
+}
 
-    /* VIDEO */
-    .reel-card video {
-      width: 100%;
-      display: block;
-    }
+/* FOOTER */
+footer {
+  background:#2e7d32;
+  color:white;
+  text-align:center;
+  padding:18px 15px;
+  margin-top:40px;
+  font-size:0.95rem;
+}
 
-    /* CAPTION */
-    .caption {
-      padding: 10px;
-      text-align: center;
-      font-weight: 600;
-      background: #f9f9f9;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-
-    /* MOBILE */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+/* RESPONSIVE */
+@media(max-width:600px){
+  .reel-card video {height:200px;}
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🎬 PK Krushi Reels Gallery</h1>
-  </header>
+<header>
+  <h1>🎬 PK Krushi Farm Reels</h1>
+</header>
 
-  <div style="text-align:center">
-    <a href="index.html" class="back">⬅ Return Home</a>
+<div class="spacer"></div>
+
+<a href="index.html" class="back">⬅ Return to Home</a>
+
+<section class="reel-grid">
+
+  <div class="reel-card">
+    <video src="video/frameHOusereel.mp4" autoplay muted loop playsinline></video>
+    <div class="caption">Frame House Reel</div>
   </div>
 
-  <div class="reel-grid">
-
-    <div class="reel-card">
-      <video src="video/frameHOusereel.mp4"
-             autoplay muted loop playsinline></video>
-      <div class="caption">Frame House Reel</div>
-    </div>
-
-    <div class="reel-card">
-      <video src="video/FramehouseReel2 .mp4"
-             autoplay muted loop playsinline></video>
-      <div class="caption">Frame House Reel 2</div>
-    </div>
-
-    <div class="reel-card">
-      <video src="video/HarshadChhapri .mp4"
-             autoplay muted loop playsinline></video>
-      <div class="caption">🆕 New Reel</div>
-    </div>
-
+  <div class="reel-card">
+    <video src="video/FramehouseReel2 .mp4" autoplay muted loop playsinline></video>
+    <div class="caption">Frame House Reel 2</div>
   </div>
 
-  <footer>
-    📍 ડાંટીવાડા, ગુજરાત | PK Krushi Farm
-  </footer>
+  <div class="reel-card">
+    <video src="video/HarshadChhapri .mp4" autoplay muted loop playsinline></video>
+    <div class="caption">New Reel</div>
+  </div>
 
-  <!-- AUTO PLAY / PAUSE ON SCROLL -->
-  <script>
-    const videos = document.querySelectorAll(".reel-card video");
+</section>
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const video = entry.target;
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      });
-    }, {
-      threshold: 0.6
-    });
+<footer>📍 ડાંટીવાડા, ગુજરાત | PK Krushi Farm</footer>
 
-    videos.forEach(video => observer.observe(video));
-  </script>
+<script>
+const videos = document.querySelectorAll("video");
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.play().catch(()=>{});
+    else entry.target.pause();
+  });
+}, {threshold:0.6});
+videos.forEach(v=>observer.observe(v));
+</script>
 
 </body>
 </html>
