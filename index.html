@@ -6,210 +6,200 @@
   <title>PK Krushi Farm House</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <script src="https://unpkg.com/scrollreveal"></script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-      transition: all 0.4s ease-in-out;
-    }
-    header {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      animation: fadelnDown 1s ease;
-    }
-    header img {
-      width: 80px;
-      height: auto;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      transition: transform 0.3s ease;
-    }
-    nav {
-      background: #1b5e20;
-      padding: 10px;
-      text-align: center;
-      animation: fadeln 1.5s ease-in-out;
- }
-    nav a {
-      display: inline-block;
-      color: white;
-      margin: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    nav a:hover{
-      color: #ffeb3b;
-      text-shadow: 0 0 10px #ffeb3b;
-      transform: scale(1.1);
-    }
-    .hero {
-      background: url('https://github.com/chaudhary451/pk-krushi-farm/blob/main/images/WhatsApp%20Image%202025-05-29%20at%2000.56.09_35b5de82.jpg?raw=true') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 80px 15px;
-      animation: fadeInUp 2s ease-in-out;
-    }
-    .hero h2 {
-      font-size: 2em;
-      color: #ffeb3b;
-      text-shadow: 2px 2px 4px #000;
-    }
-    .hero p {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #00e676;
-      text-shadow: 1px 1px 3px #000;
-    }
-    .cta-buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background: #ffcc00;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .cta-buttons a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    section {
-      padding: 30px 15px;
-      max-width: 100%;
-      margin: auto;
-      animation: fadeln 1s ease;
-    }
-    h3 {
-      color: #2e7d32;
-      font-size: 1.5em;
-      animation: slidelnLeft 1s ease;
-    }
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 10px;
-      padding: 20px;
-    }
-    .slider img, .video-thumb {
-      height: 160px;
-      border-radius: 10px;
-      scroll-snap-align: start;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .slider img:hover, .video-thumb:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
+<style>
+html { scroll-behavior: smooth; }
 
-    .video-gallery , .insta-embed {
-      display: flex;
-      justify-content: center;
-      margin: 20px 0;
-      flex-direction: column;
-      align-items: center;
-    }
-    insta-embed iframe {
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      animation: zoomIn 1s ease;}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg,#f3fdf6,#eef7f0);
+  color: #2c2c2c;
+}
 
-    .video-popup, .img-popup {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 0.5s ease;
-    }
-    .video-popup-content, .img-popup img {
-      width: 90%;
-      max-width: 720px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-    .video-popup-content video {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .img-popup img {
-      max-width: 90%;
-      max-height: 80%;
-    }
-    .close-btn, .img-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 2em;
-      color: white;
-      cursor: pointer;
-      background: #333;
-      border-radius: 50%;
-      padding: 0 10px;
-    }
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg,#1b5e20,#2e7d32);
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+header img {
+  width: 85px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
+header h1 { margin: 10px 0 5px; }
+header p { opacity: 0.9; }
 
-    form input, form textarea {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1em;
-    }
-    form button {
-      padding: 10px;
-      background: #1b5e20;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 100%;
-    }
-    footer {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    @media screen and (max-width: 600px) {
-      .hero h2 {
-        font-size: 1.5em;
-      }
-      .hero p {
-        font-size: 1em;
-      }
-      .slider img {
-        height: 120px;
-      }
-    }
-  </style>
+/* ---------- NAV ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(27,94,32,0.95);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  z-index: 99;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 14px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffeb3b;
+  transform: translateY(-2px);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  background:
+    linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+    url('https://github.com/chaudhary451/pk-krushi-farm/blob/main/images/WhatsApp%20Image%202025-05-29%20at%2000.56.09_35b5de82.jpg?raw=true')
+    center/cover no-repeat;
+  padding: 90px 15px;
+  text-align: center;
+}
+
+.hero h2 {
+  color: #ffeb3b;
+  font-size: 2.2em;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+.hero p {
+  color: #b9ffcc;
+  font-size: 1.15em;
+  margin-bottom: 25px;
+}
+
+/* ---------- BUTTONS ---------- */
+.cta-buttons a {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg,#ffeb3b,#ffc107);
+  color: #222;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+.cta-buttons a:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  padding: 40px 15px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h3 {
+  color: #1b5e20;
+  font-size: 1.7em;
+  margin-bottom: 10px;
+}
+
+/* ---------- GALLERY ---------- */
+.slider {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 15px 5px;
+}
+
+.slider img, .video-thumb {
+  height: 170px;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: 0.35s;
+}
+
+.slider img:hover, .video-thumb:hover {
+  transform: scale(1.08);
+}
+
+/* ---------- POPUPS ---------- */
+.video-popup, .img-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.video-popup-content, .img-popup img {
+  width: 90%;
+  max-width: 720px;
+  border-radius: 15px;
+  animation: zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.8); opacity:0;}
+  to {transform: scale(1); opacity:1;}
+}
+
+.close-btn, .img-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 28px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+/* ---------- CONTACT ---------- */
+form input, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background: linear-gradient(135deg,#1b5e20,#2e7d32);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+  margin-top: 40px;
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:600px){
+  .hero h2 { font-size: 1.6em; }
+  .slider img { height: 130px; }
+}
+</style>
+
 </head>
 <body>
 
@@ -344,3 +334,4 @@
 
 </body>
 </html>
+
