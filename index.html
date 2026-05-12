@@ -2,348 +2,365 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PK Krushi Farm House</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <script src="https://unpkg.com/scrollreveal"></script>
- <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-      color: #333;
-      transition: all 0.4s ease-in-out;
-    }
-    header {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      animation: fadelnDown 1s ease;
-    }
-    header img {
-      width: 80px;
-      height: auto;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      transition: transform 0.3s ease;
-    }
-    nav {
-      background: #1b5e20;
-      padding: 10px;
-      text-align: center;
-      animation: fadeln 1.5s ease-in-out;
- }
-    nav a {
-      display: inline-block;
-      color: white;
-      margin: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    nav a:hover{
-      color: #ffeb3b;
-      text-shadow: 0 0 10px #ffeb3b;
-      transform: scale(1.1);
-    }
-    .hero {
-      background: url('https://github.com/chaudhary451/pk-krushi-farm/blob/main/images/WhatsApp%20Image%202025-05-29%20at%2000.56.09_35b5de82.jpg?raw=true') center/cover no-repeat;
-      color: white;
-      text-align: center;
-      padding: 80px 15px;
-      animation: fadeInUp 2s ease-in-out;
-    }
-    .hero h2 {
-      font-size: 2em;
-      color: #ffeb3b;
-      text-shadow: 2px 2px 4px #000;
-    }
-    .hero p {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #00e676;
-      text-shadow: 1px 1px 3px #000;
-    }
-    .cta-buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background: #ffcc00;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .cta-buttons a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-    section {
-      padding: 30px 15px;
-      max-width: 100%;
-      margin: auto;
-      animation: fadeln 1s ease;
-    }
-    h3 {
-      color: #2e7d32;
-      font-size: 1.5em;
-      animation: slidelnLeft 1s ease;
-    }
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 10px;
-      padding: 20px;
-    }
-    .slider img, .video-thumb {
-      height: 160px;
-      border-radius: 10px;
-      scroll-snap-align: start;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .slider img:hover, .video-thumb:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    .video-gallery , .insta-embed {
-      display: flex;
-      justify-content: center;
-      margin: 20px 0;
-      flex-direction: column;
-      align-items: center;
-    }
-    insta-embed iframe {
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      animation: zoomIn 1s ease;}
-
-    .video-popup, .img-popup {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 0.5s ease;
-    }
-    .video-popup-content, .img-popup img {
-      width: 90%;
-      max-width: 720px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-    .video-popup-content video {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .img-popup img {
-      max-width: 90%;
-      max-height: 80%;
-    }
-    .close-btn, .img-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 2em;
-      color: white;
-      cursor: pointer;
-      background: #333;
-      border-radius: 50%;
-      padding: 0 10px;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    form input, form textarea {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1em;
-    }
-    form button {
-      padding: 10px;
-      background: #1b5e20;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 100%;
-    }
-    footer {
-      background: #2e7d32;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    @media screen and (max-width: 600px) {
-      .hero h2 {
-        font-size: 1.5em;
-      }
-      .hero p {
-        font-size: 1em;
-      }
-      .slider img {
-        height: 120px;
-      }
-    }
-  </style>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PK Krushi Farm House – Dantiwada, Gujarat</title>
+  <meta name="description" content="PK Krushi Farm House – Premium agro-tourism and sustainable farming since 1965. Located in Dantiwada, Gujarat. Visit our farm, experience nature and organic living." />
+  <meta name="keywords" content="PK Krushi Farm House, Dantiwada Gujarat, agro tourism, organic farm, farming Gujarat, farm visit, krishifarm" />
+  <meta name="author" content="PK Krushi Farm House" />
+  <meta property="og:title" content="PK Krushi Farm House – Dantiwada, Gujarat" />
+  <meta property="og:description" content="Experience sustainable farming and agro-tourism at PK Krushi Farm House, Dantiwada, Gujarat since 1965." />
+  <meta property="og:image" content="https://github.com/chaudhary451/pk-krushi-farm/blob/main/images/framehouse01.jpg?raw=true" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <img src="https://github.com/chaudhary451/pk-krushi-farm/blob/main/images/logo.jpg?raw=true" alt="PK Krushi Logo">
-    <h1>PK Krushi Farm House</h1>
-    <p>किसान बिना अन्न नहीं • No Farmers, No Food</p>
-  </header>
+<!-- ══ LOADER ══ -->
+<div id="loader" aria-hidden="true">
+  <img src="images/logo.jpg" alt="PK Krushi Logo" class="loader-logo" />
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  <p class="loader-text">PK KRUSHI FARM HOUSE</p>
+</div>
 
-  <nav>
-  <a href="index.html">Home</a>
-  <a href="#about">About</a>
-  <a href="#Gallery">Gallery</a> <!-- Changed this line -->
-  <a href="#contact">Contact</a>
-  </nav>
-  
-
-  <section class="hero">
-    <h2>Welcome to PK Krushi Farm</h2>
-    <p>हम दिल से किसान हैं, प्रकृति को प्यार से उगाते हैं।</p>
-    <div class="cta-buttons">
-      <a href="gallery_page.html">Watch Reels</a>
-      <a href="#contact">Visit Us</a>
+<!-- ══ NAVBAR ══ -->
+<nav id="navbar" role="navigation" aria-label="Main Navigation">
+  <a href="#hero" class="nav-brand">
+    <img src="images/logo.jpg" alt="PK Krushi Logo" class="nav-logo" />
+    <div>
+      <div class="nav-title">PK Krushi Farm</div>
+      <div class="nav-subtitle">DANTIWADA · GUJARAT</div>
     </div>
-  </section>
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <section id="about">
-    <h3>About Us – हमारे बारे में</h3>
-    <p>हम गुजरात के डांटीवाड़ा से किसान हैं। 1965 से हम स्मार्ट और टिकाऊ खेती को बढ़ावा दे रहे हैं। हमारा मिशन: नई पीढ़ी को खेती की ओर लाना और आधुनिक तकनीक के साथ इसे आगे बढ़ाना।</p>
-  </section>
-
-  <section id="Pics">
-    <h3>Gallery – पिक</h3>
-
-  <div class="video-gallery">
-  <video class="video-thumb" onclick="openVideoPopup('video/frameHOusereel.mp4')" muted autoplay loop>
-    <source src="video/frameHOusereel.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+<!-- ══ HERO ══ -->
+<section id="hero" aria-label="Hero Section">
+  <video class="hero-video" autoplay muted loop playsinline poster="images/framehouse01.jpg">
+    <source src="video/frameHOusereel.mp4" type="video/mp4" />
   </video>
-  </div>
-    <div class="slider">
-      <img src="https://github.com/chaudhary451/pk-krushi-farm/blob/main/images/framehouse03.jpg?raw=true" onclick="openImagePopup(this.src)" alt="Farm 2">
-      <img src="https://github.com/chaudhary451/pk-krushi-farm/blob/main/images/framehouse01.jpg?raw=true" class="zoom-img" onclick="openImagePopup(this.src)" alt="Farm 3">
-      <img src="https://github.com/chaudhary451/pk-krushi-farm/blob/main/images/pic1.jpg?raw=true" class="zoom-img" onclick="openImagePopup(this.src)" alt="Farm 4">
-    </div>
-  </section>
-
- <section id="contact">
-  <h3>Contact – संपर्क करें</h3>
-  <p>स्थान: p.k.farmhouse, डांटीवाड़ा, गुजरात 385510</p>
-  <p>
-    📍 <a href="https://maps.app.goo.gl/zkC2BYwFwGG9eJnX9" target="_blank">Open in Google Maps</a>
-  </p>
-
-  <h4 style="text-align:center;">📍 Location: <strong>PK Krushi Frame House</strong></h4>
-
-  <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14900.72622691221!2d72.3573893!3d24.2898234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDE3JzIzLjQiTiA3MsKwMjEnMjYuNiJF!5e0!3m2!1sen!2sin!4v1717872080000!5m2!1sen!2sin" 
-  width="100%" 
-  height="300" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-    Instagram: <a href="https://www.instagram.com/p.k.krushi.farm/" target="_blank">@p.k.krushi.farm</a><br>
-    WhatsApp: +91-XXXXXXXXXX</p>
-    <div style="text-align: center; margin: 20px 0;">
-      <img src="https://github.com/chaudhary451/pk-krushi-farm/blob/main/images/Qr.JPG?raw=true" alt="QR Code" style="max-width: 200px; width: 100%; height: auto;">
-      <p>हमसे संपर्क के लिए QR कोड स्कैन करें</p>
-    </div>
-    <form>
-      <input type="text" placeholder="आपका नाम" required>
-      <input type="email" placeholder="आपका ईमेल" required>
-      <textarea placeholder="संदेश..." rows="4"></textarea>
-      <button type="submit">भेजें</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>"हमें हर दिन किसानों की ज़रूरत है – दरરોજ ખેડૂત જરૂરી છે"</p>
-  </footer>
-
-  <!-- Video Popup -->
-  <div id="videoPopup" class="video-popup">
-    <div class="video-popup-content">
-      <span class="close-btn" onclick="closeVideoPopup()">&times;</span>
-      <video id="popupVideo" controls autoplay muted loop></video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Since 1965 · Dantiwada, Gujarat</div>
+    <h1 class="hero-title">
+      <span>PK Krushi</span><br />Farm House
+    </h1>
+    <p class="hero-subtitle">हम दिल से किसान हैं, प्रकृति को प्यार से उगाते हैं।<br />Rooted in tradition, growing with passion.</p>
+    <div class="hero-buttons">
+      <a href="#gallery" class="btn btn-primary"><i class="fa-solid fa-images"></i> Explore Gallery</a>
+      <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-location-dot"></i> Visit Us</a>
     </div>
   </div>
-
-  <!-- Image Popup -->
-  <div id="imagePopup" class="img-popup">
-    <span class="img-close" onclick="closeImagePopup()">&times;</span>
-    <img id="popupImg" src="" alt="Zoomed image">
+  <div class="hero-scroll" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="hero-scroll-line"></div>
   </div>
+</section>
 
-  <script>
-    function openVideoPopup(src) {
-      const popup = document.getElementById('videoPopup');
-      const video = document.getElementById('popupVideo');
-      video.src = src;
-      popup.style.display = 'flex';
-    }
+<!-- ══ ABOUT ══ -->
+<section id="about" class="section section-alt">
+  <div class="about-grid">
+    <div class="about-img-stack reveal-left">
+      <img src="images/framehouse01.jpg" alt="PK Krushi Farm House main view" class="about-img-main" />
+      <div class="about-img-badge">
+        <span class="badge-num">60+</span>
+        <span class="badge-text">Years of Farming</span>
+      </div>
+    </div>
+    <div class="about-text reveal-right">
+      <span class="section-tag">Our Story</span>
+      <h2 class="section-title">About PK Krushi Farm House</h2>
+      <div class="section-divider"></div>
+      <p>हम गुजरात के डांटीवाड़ा से किसान हैं। 1965 से हम स्मार्ट और टिकाऊ खेती को बढ़ावा दे रहे हैं।</p>
+      <p>Our mission is to bring the next generation closer to farming and advance it with modern technology — while staying true to our roots and the land we love.</p>
+      <p>We believe that <strong>किसान बिना अन्न नहीं</strong> — without farmers, there is no food. Our farm is a living testament to sustainable, organic, and joyful farming.</p>
+      <div class="about-stats">
+        <div class="stat-card reveal">
+          <div class="num">60+</div>
+          <div class="label">Years Farming</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="num">100%</div>
+          <div class="label">Organic</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="num">5★</div>
+          <div class="label">Visitor Rated</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    function closeVideoPopup() {
-      const popup = document.getElementById('videoPopup');
-      const video = document.getElementById('popupVideo');
-      video.pause();
-      video.src = "";
-      popup.style.display = 'none';
-    }
+<!-- ══ SERVICES ══ -->
+<section id="services" class="section">
+  <div class="section-header">
+    <span class="section-tag">What We Offer</span>
+    <h2 class="section-title">Our Services</h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">From agro-tourism experiences to organic produce — discover what makes PK Krushi Farm unique.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">🌾</span>
+      <h3>Agro Tourism</h3>
+      <p>Experience authentic farm life — sow seeds, harvest crops, and connect with nature in a truly immersive way.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🥬</span>
+      <h3>Organic Produce</h3>
+      <p>Fresh, pesticide-free vegetables and fruits grown with love and traditional knowledge passed through generations.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🌳</span>
+      <h3>Nature Walks</h3>
+      <p>Guided tours through our lush farmlands, orchards, and natural landscapes — perfect for families and students.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">📸</span>
+      <h3>Farm Photoshoots</h3>
+      <p>Stunning backdrops of green fields and rustic farmscapes for pre-wedding, family, and creative photography.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🏡</span>
+      <h3>Farm Stay</h3>
+      <p>Enjoy an overnight stay surrounded by nature, fresh air, and the calming rhythm of rural Gujarat.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🎓</span>
+      <h3>Agricultural Training</h3>
+      <p>Workshops and hands-on training sessions on modern sustainable farming techniques for youth and students.</p>
+    </div>
+  </div>
+</section>
 
-    function openImagePopup(src) {
-      document.getElementById("popupImg").src = src;
-      document.getElementById("imagePopup").style.display = "flex";
-    }
+<!-- ══ GALLERY ══ -->
+<section id="gallery" class="section section-alt">
+  <div class="section-header">
+    <span class="section-tag">Photo & Video</span>
+    <h2 class="section-title">Farm Gallery</h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">A glimpse into the beauty, life, and spirit of PK Krushi Farm House.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item large reveal" onclick="openMedia('video','video/frameHOusereel.mp4')">
+      <video muted autoplay loop playsinline>
+        <source src="video/frameHOusereel.mp4" type="video/mp4" />
+      </video>
+      <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Farm Reel</span></div>
+    </div>
+    <div class="gallery-item reveal" onclick="openMedia('img','images/framehouse03.jpg')">
+      <img src="images/framehouse03.jpg" alt="Farm House View" loading="lazy" />
+      <div class="gallery-overlay"><span><i class="fa-solid fa-expand"></i> Farm View</span></div>
+    </div>
+    <div class="gallery-item reveal" onclick="openMedia('img','images/framehouse01.jpg')">
+      <img src="images/framehouse01.jpg" alt="Farm House Exterior" loading="lazy" />
+      <div class="gallery-overlay"><span><i class="fa-solid fa-expand"></i> Exterior</span></div>
+    </div>
+    <div class="gallery-item reveal" onclick="openMedia('img','images/pic1.jpg')">
+      <img src="images/pic1.jpg" alt="Farm Landscape" loading="lazy" />
+      <div class="gallery-overlay"><span><i class="fa-solid fa-expand"></i> Landscape</span></div>
+    </div>
+    <div class="gallery-item reveal" onclick="openMedia('video','video/HarshadChhapri .mp4')">
+      <video muted autoplay loop playsinline>
+        <source src="video/HarshadChhapri .mp4" type="video/mp4" />
+      </video>
+      <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Farm Reel 2</span></div>
+    </div>
+    <div class="gallery-item reveal" onclick="openMedia('video','video/FramehouseReel2 .mp4')">
+      <video muted autoplay loop playsinline>
+        <source src="video/FramehouseReel2 .mp4" type="video/mp4" />
+      </video>
+      <div class="gallery-overlay"><span><i class="fa-solid fa-play"></i> Farm Reel 3</span></div>
+    </div>
+  </div>
+</section>
 
-    function closeImagePopup() {
-      document.getElementById("imagePopup").style.display = "none";
-    }
+<!-- ══ TESTIMONIALS ══ -->
+<section id="testimonials" class="section section-dark">
+  <div class="section-header">
+    <span class="section-tag" style="color:var(--green-light)">Visitor Reviews</span>
+    <h2 class="section-title">What People Say</h2>
+    <div class="section-divider"></div>
+    <p class="section-desc">Hear from families and visitors who experienced PK Krushi Farm.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="stars">★★★★★</div>
+      <p>"Amazing experience! The farm is so peaceful and the owners are incredibly warm. We loved every moment of our visit to PK Krushi Farm."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👨‍🌾</div>
+        <div><div class="author-name">Rajesh Patel</div><div class="author-loc">Ahmedabad, Gujarat</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="stars">★★★★★</div>
+      <p>"We came for a photoshoot and ended up falling in love with farm life. The greenery and open fields are breathtaking. Highly recommend!"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👩‍🦱</div>
+        <div><div class="author-name">Priya Sharma</div><div class="author-loc">Mehsana, Gujarat</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="stars">★★★★★</div>
+      <p>"Brought my kids here for their school project. They learned so much about farming and organic food. A must-visit for every family in Gujarat."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👨‍👩‍👧</div>
+        <div><div class="author-name">Mahesh Chaudhary</div><div class="author-loc">Palanpur, Gujarat</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    ScrollReveal().reveal('.slider img, .video-thumb', {
-      origin: 'bottom',
-      distance: '40px',
-      duration: 1000,
-      easing: 'ease-in-out',
-      reset: true,
-      interval: 100
-    });
-  </script>
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="section section-alt">
+  <div class="section-header">
+    <span class="section-tag">Get In Touch</span>
+    <h2 class="section-title">Contact Us</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="contact-wrapper">
+    <div class="contact-info reveal-left">
+      <span class="section-tag">Reach Out</span>
+      <h3 class="section-title">We'd love to hear from you</h3>
+      <div class="section-divider"></div>
+      <div class="contact-detail">
+        <div class="contact-icon">📍</div>
+        <div>
+          <h4>Location</h4>
+          <p>P.K. Farmhouse, Dantiwada,<br />Gujarat – 385510</p>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📱</div>
+        <div>
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/91XXXXXXXXXX">+91-XXXXXXXXXX</a>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📸</div>
+        <div>
+          <h4>Instagram</h4>
+          <a href="https://www.instagram.com/p.k.krushi.farm/" target="_blank">@p.k.krushi.farm</a>
+        </div>
+      </div>
+      <div class="contact-social">
+        <a href="https://www.instagram.com/p.k.krushi.farm/" target="_blank" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://maps.app.goo.gl/zkC2BYwFwGG9eJnX9" target="_blank" class="social-link" aria-label="Google Maps"><i class="fa-solid fa-map-location-dot"></i></a>
+      </div>
 
+      <div class="qr-section">
+        <div class="qr-card">
+          <img src="images/Qr.JPG" alt="QR Code to contact PK Krushi Farm House" loading="lazy" />
+          <p>Scan to connect with us</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal-right">
+      <div class="contact-form-card">
+        <h3>📬 Send Us a Message</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Ramesh Patel" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="I'd like to visit the farm..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-green btn-primary">Send Message →</button>
+        </form>
+      </div>
+
+      <!-- Google Maps -->
+      <div class="map-container" style="margin-top:24px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14900.72622691221!2d72.3573893!3d24.2898234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDE3JzIzLjQiTiA3MsKwMjEnMjYuNiJF!5e0!3m2!1sen!2sin!4v1717872080000!5m2!1sen!2sin"
+          width="100%" height="280"
+          style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="PK Krushi Farm House Location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.jpg" alt="PK Krushi Logo" class="nav-logo" />
+      <h3>PK Krushi Farm House</h3>
+      <p>किसान बिना अन्न नहीं। Since 1965, growing with passion, purpose, and love for the land.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/p.k.krushi.farm/" target="_blank" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="https://maps.app.goo.gl/zkC2BYwFwGG9eJnX9" target="_blank" class="social-link" aria-label="Maps"><i class="fa-solid fa-map-location-dot"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Agro Tourism</a></li>
+        <li><a href="#services">Organic Produce</a></li>
+        <li><a href="#services">Farm Stay</a></li>
+        <li><a href="#services">Photoshoots</a></li>
+        <li><a href="#services">Nature Walks</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span>PK Krushi Farm House</span> · Dantiwada, Gujarat · Made with ❤️ for farming</p>
+  </div>
+</footer>
+
+<!-- ══ POPUP ══ -->
+<div id="popup" class="popup-overlay" role="dialog" aria-modal="true" aria-label="Media Viewer">
+  <div class="popup-inner">
+    <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
+    <img id="popup-img" src="" alt="Gallery image" style="display:none;" />
+    <video id="popup-video" controls playsinline style="display:none; max-width:90vw; max-height:85vh; border-radius:20px;">
+      <source src="" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
-
-
